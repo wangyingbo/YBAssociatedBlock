@@ -15,6 +15,9 @@
 		03AF74361F53DA8C00F89D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AF74341F53DA8C00F89D7F /* LaunchScreen.storyboard */; };
 		03AF74411F53DA8D00F89D7F /* testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF74401F53DA8D00F89D7F /* testTests.m */; };
 		03AF744C1F53DA8D00F89D7F /* testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF744B1F53DA8D00F89D7F /* testUITests.m */; };
+		03AF745C1F53DB0B00F89D7F /* YBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF745B1F53DB0B00F89D7F /* YBView.m */; };
+		03AF74651F53E1E500F89D7F /* YBView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF74641F53E1E500F89D7F /* YBView+Category.m */; };
+		03AF746E1F541E8200F89D7F /* NSObject+Associated.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF746C1F541E8200F89D7F /* NSObject+Associated.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,13 @@
 		03AF74471F53DA8D00F89D7F /* testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AF744B1F53DA8D00F89D7F /* testUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testUITests.m; sourceTree = "<group>"; };
 		03AF744D1F53DA8D00F89D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03AF745A1F53DB0B00F89D7F /* YBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBView.h; sourceTree = "<group>"; };
+		03AF745B1F53DB0B00F89D7F /* YBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBView.m; sourceTree = "<group>"; };
+		03AF74631F53E1E500F89D7F /* YBView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YBView+Category.h"; sourceTree = "<group>"; };
+		03AF74641F53E1E500F89D7F /* YBView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YBView+Category.m"; sourceTree = "<group>"; };
+		03AF746B1F541E8200F89D7F /* NSObject+Associated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Associated.h"; sourceTree = "<group>"; };
+		03AF746C1F541E8200F89D7F /* NSObject+Associated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Associated.m"; sourceTree = "<group>"; };
+		03AF746F1F5429D000F89D7F /* YBAssociatedHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBAssociatedHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +111,15 @@
 		03AF74251F53DA8C00F89D7F /* test */ = {
 			isa = PBXGroup;
 			children = (
+				03AF746A1F541E8200F89D7F /* YBAssociated */,
 				03AF74291F53DA8C00F89D7F /* AppDelegate.h */,
 				03AF742A1F53DA8C00F89D7F /* AppDelegate.m */,
 				03AF742C1F53DA8C00F89D7F /* ViewController.h */,
 				03AF742D1F53DA8C00F89D7F /* ViewController.m */,
-				03AF742F1F53DA8C00F89D7F /* Main.storyboard */,
-				03AF74321F53DA8C00F89D7F /* Assets.xcassets */,
-				03AF74341F53DA8C00F89D7F /* LaunchScreen.storyboard */,
-				03AF74371F53DA8C00F89D7F /* Info.plist */,
+				03AF745A1F53DB0B00F89D7F /* YBView.h */,
+				03AF745B1F53DB0B00F89D7F /* YBView.m */,
+				03AF74631F53E1E500F89D7F /* YBView+Category.h */,
+				03AF74641F53E1E500F89D7F /* YBView+Category.m */,
 				03AF74261F53DA8C00F89D7F /* Supporting Files */,
 			);
 			path = test;
@@ -117,6 +128,10 @@
 		03AF74261F53DA8C00F89D7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03AF742F1F53DA8C00F89D7F /* Main.storyboard */,
+				03AF74321F53DA8C00F89D7F /* Assets.xcassets */,
+				03AF74341F53DA8C00F89D7F /* LaunchScreen.storyboard */,
+				03AF74371F53DA8C00F89D7F /* Info.plist */,
 				03AF74271F53DA8C00F89D7F /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +153,16 @@
 				03AF744D1F53DA8D00F89D7F /* Info.plist */,
 			);
 			path = testUITests;
+			sourceTree = "<group>";
+		};
+		03AF746A1F541E8200F89D7F /* YBAssociated */ = {
+			isa = PBXGroup;
+			children = (
+				03AF746F1F5429D000F89D7F /* YBAssociatedHeader.h */,
+				03AF746B1F541E8200F89D7F /* NSObject+Associated.h */,
+				03AF746C1F541E8200F89D7F /* NSObject+Associated.m */,
+			);
+			path = YBAssociated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +302,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				03AF742E1F53DA8C00F89D7F /* ViewController.m in Sources */,
+				03AF746E1F541E8200F89D7F /* NSObject+Associated.m in Sources */,
+				03AF745C1F53DB0B00F89D7F /* YBView.m in Sources */,
 				03AF742B1F53DA8C00F89D7F /* AppDelegate.m in Sources */,
 				03AF74281F53DA8C00F89D7F /* main.m in Sources */,
+				03AF74651F53E1E500F89D7F /* YBView+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +546,7 @@
 				03AF74521F53DA8D00F89D7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03AF74531F53DA8D00F89D7F /* Build configuration list for PBXNativeTarget "testTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +555,7 @@
 				03AF74551F53DA8D00F89D7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03AF74561F53DA8D00F89D7F /* Build configuration list for PBXNativeTarget "testUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +564,7 @@
 				03AF74581F53DA8D00F89D7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
