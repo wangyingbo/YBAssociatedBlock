@@ -34,15 +34,6 @@ typedef void(^YBTapBlock)(id obj);
     
     
     
-//    void (^t)(NSString *str) = ^(NSString *str){
-//        NSLog(@"%@",str);
-//    };
-    /**原始的*/
-//    objc_setAssociatedObject(NSClassFromString(@"YBView"), "asdfghjkl", t, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    
-    /**用宏定义封装的*/
-    //YB_OBJC_SET_ASSOCIATED_OBJECT(NSClassFromString(@"YBView"), @"YBView_key", t, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    
     /**封装成一句代码回调*/
     [NSObject setAssociatedWithClass:@"YBView" key:@"YBView_key" policy:OBJC_ASSOCIATION_COPY_NONATOMIC completion:^(id obj) {
         if (self.tapBlock) {//回调以后再传出回调

@@ -39,12 +39,6 @@
 
 - (void)buttonClick:(UIButton *)sender
 {
-    /**原来的*/
-//    void(^t)(NSString *str) = objc_getAssociatedObject(NSClassFromString(@"YBView"), "asdfghjkl");
-    
-    /**用宏定义封装的*/
-//    void(^t)(NSString *str) = YB_OBJC_GET_ASSOCIATED_OBJECT(NSClassFromString(@"YBView"), @"YBView_key");
-//    if (t) t(@"hello");
     
     /**封装成一句代码的回调传参*/
     [NSObject getAssociatedWithClass:@"YBView" key:@"YBView_key" param:@[@"wang",@"123",@{@"key":@"value"}]];
