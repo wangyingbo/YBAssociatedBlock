@@ -20,7 +20,7 @@
 
 用[**YBAssociated**](https://github.com/wangyingbo/YBAssociatedBlock)时完成不用担心此问题。此种方法是在ViewController里动态的给需要传值或者回调的子view里利用runtime的setAssociate方法增加一个属性，此属性可以是block或者常用类型。然后在子view里利用getAssociate获取值，实现完全解耦，不用import或则@class类名，只需要传入类名字符串就可以实现。
 
-###eg
+### eg
 
 + **使用此类进行回调**
 
