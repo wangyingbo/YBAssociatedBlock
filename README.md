@@ -17,6 +17,7 @@
 + **说明**
 
 比如在ViewController里有自定义的view，此view的里又有多个自定义的subView，在最里层的view里有一个button，点击button要响应跳转事件，传统的做法有两种：**1、用delegate或着block；2、用通知或者KVO。**不过弊端是，用第一种方法时如果view的层级很深的话需要用多个delegate或者block传值，多个delegate需要修改方法时很痛苦，block又要担心循环引用的问题；第二种方法通知或者KVO使用步骤冗余，而且需要关注移除时机。
+
 用[**YBAssociated**](https://github.com/wangyingbo/YBAssociatedBlock)时完成不用担心此问题。此种方法是在ViewController里动态的给需要传值或者回调的子view里利用runtime的setAssociate方法增加一个属性，此属性可以是block或者常用类型。然后在子view里利用getAssociate获取值，实现完全解耦，不用import或则@class类名，只需要传入类名字符串就可以实现。
 
 ###eg
