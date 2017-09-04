@@ -12,6 +12,8 @@
 
 + **导入**
 
+直接拖拽文件夹或者通过`pod search YBAssociated`通过`cocoapod`导入
+
 在项目的`.pch`里导入`#import "YBAssociatedHeader.h"`可以在任何类调用；或者在需要传值和回调的类里导入`#import "YBAssociatedHeader.h"`。
 
 + **说明**
