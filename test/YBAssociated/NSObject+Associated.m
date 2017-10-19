@@ -130,7 +130,7 @@
         
         obj = mySelector(objc,sel,[mutArr safeGetAtIndex:0],[mutArr safeGetAtIndex:1],[mutArr safeGetAtIndex:2],[mutArr safeGetAtIndex:3],[mutArr safeGetAtIndex:4],[mutArr safeGetAtIndex:5],[mutArr safeGetAtIndex:6],[mutArr safeGetAtIndex:7],[mutArr safeGetAtIndex:8],[mutArr safeGetAtIndex:9]);
         if (completion) {
-            if(obj){completion(obj);}
+            completion(obj);
         }
         
         
