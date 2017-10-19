@@ -22,6 +22,28 @@ typedef OBJC_ENUM(uintptr_t, yb_objc_AssociationPolicy) {
 };
 
 
+
+#define SafePerformSelector(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+
+
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff;\
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+
+
+
 /** 给category增加任意属性
  *  exemple :
  *  @property (nonatomic,assign)CGPoint point;
@@ -52,16 +74,16 @@ objc_setAssociatedObject(self, @selector(GETTER), associate_value, OBJC_ASSOCIAT
 #define YB_OBJC_GET_ASSOCIATED_OBJECT(CLASS,KEY) objc_getAssociatedObject(CLASS, KEY)
 #define YB_OBJC_SET_ASSOCIATED_OBJECT(CLASS,KEY,PARAM,POLICY)\
 if (CLASS) {\
-    Ivar ivar = class_getInstanceVariable(CLASS, [[NSString stringWithFormat:@"_%@", PARAM] UTF8String]);\
-    if (ivar){\
-        ivar;\
-    }\
-    else{\
-        objc_setAssociatedObject(CLASS, KEY, PARAM, POLICY);\
-    }\
+Ivar ivar = class_getInstanceVariable(CLASS, [[NSString stringWithFormat:@"_%@", PARAM] UTF8String]);\
+if (ivar){\
+ivar;\
+}\
+else{\
+objc_setAssociatedObject(CLASS, KEY, PARAM, POLICY);\
+}\
 }\
 else {\
-    NSLog(@"YB_OBJC_SET_ASSOCIATED_OBJECT 类为空");\
+NSLog(@"YB_OBJC_SET_ASSOCIATED_OBJECT 类为空");\
 }\
 
 

@@ -68,6 +68,14 @@ typedef void(^YBTapBlock)(id obj);
     };
 }
 
+- (NSArray *)testSendWithParam:(NSString *)param withName:(NSString *)name
+{
+    NSLog(@"参数param：%@",param);
+    NSLog(@"参数name：%@",name);
+    return @[@"100"];
+    
+}
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
