@@ -57,7 +57,7 @@
     /**利用msgSend函数调用方法*/
     [NSObject msgSendWithClass:@"ViewController" withSelecter:@"testSendWithParam:withName:" withCompletion:^(id obj) {
         NSLog(@"返回值：%@",obj);
-    } withParam:@"param1",@"param2",@"param3", nil];
+    } withParam:@"param1",@"param2",@"param3",@"param4", nil];
 }
 
 

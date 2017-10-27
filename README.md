@@ -3,6 +3,7 @@
 ### features
 
 + **一句代码解决多层级页面响应传值（基于runtime和block）；**
++ **一句代码调用任意类的类方法和实例方法，私有或公有方法；**
 + **一句话给category增加属性；**
 
 
@@ -47,6 +48,16 @@
 
     /**传值*/
     [NSObject yb_setAssociatedWithClass:@"YBView" withPropertyName:@"tagString" withValue:@"wang yingbo test" withPolicy:OBJC_ASSOCIATION_COPY_NONATOMIC];
+
++ **使用此类调用任意类的类方法和实例方法，公有或私有方法**
+
+
+		/**利用msgSend函数调用方法*/
+		[NSObject msgSendWithClass:@"ViewController" withSelecter:@"testSendWithParam:withName:" withCompletion:^(id obj) {
+			NSLog(@"返回值：%@",obj);
+		} withParam:@"param1",@"param2",@"param3",@"param4", nil];
+
+
 
 在子类view里接收传值：
 
