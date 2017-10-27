@@ -60,7 +60,7 @@
 + **使用此类调用任意类的类方法和实例方法，公有或私有方法**
 
 		/**利用msgSend函数调用方法*/
-		[NSObject msgSendWithClass:@"ViewController" withSelecter:@"testSendWithParam:withName:" withCompletion:^(id obj) {
+		[NSObject msgSendWithClass:@"ViewController" withSelector:@"testSendWithParam:withName:" withCompletion:^(id obj) {
 			NSLog(@"返回值：%@",obj);
 		} withParam:@"param1",@"param2",@"param3",@"param4", nil];
 
