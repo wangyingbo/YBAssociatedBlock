@@ -56,7 +56,7 @@
     return property;
 }
 
-+ (void)msgSendWithClass:(NSString *)claString withSelecter:(NSString *)selString withCompletion:(void(^)(id obj))completion withParam:(id)firstParam, ... NS_REQUIRES_NIL_TERMINATION
++ (void)msgSendWithClass:(NSString *)claString withSelector:(NSString *)selString withCompletion:(void(^)(id obj))completion withParam:(id)firstParam, ... NS_REQUIRES_NIL_TERMINATION
 {
     if (!claString || !selString) {
         return;

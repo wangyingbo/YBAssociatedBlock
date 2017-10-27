@@ -68,7 +68,7 @@
  @param completion 方法的返回值
  @param firstParam 可变参数列表，最多10个参数
  */
-+ (void)msgSendWithClass:(NSString *)claString withSelecter:(NSString *)selString withCompletion:(void(^)(id obj))completion withParam:(id)firstParam, ... NS_REQUIRES_NIL_TERMINATION;
++ (void)msgSendWithClass:(NSString *)claString withSelector:(NSString *)selString withCompletion:(void(^)(id obj))completion withParam:(id)firstParam, ... NS_REQUIRES_NIL_TERMINATION;
 
 
 #pragma mark - 通过runtime动态添加property

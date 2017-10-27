@@ -55,7 +55,7 @@
     NSLog(@"tag字符串——————————%@",tagStr);
     
     /**利用msgSend函数调用方法*/
-    [NSObject msgSendWithClass:@"ViewController" withSelecter:@"testSendWithParam:withName:" withCompletion:^(id obj) {
+    [NSObject msgSendWithClass:@"ViewController" withSelector:@"testSendWithParam:withName:" withCompletion:^(id obj) {
         NSLog(@"返回值：%@",obj);
     } withParam:@"param1",@"param2",@"param3",@"param4", nil];
 }

@@ -72,7 +72,7 @@ typedef void(^YBTapBlock)(id obj);
 {
     NSLog(@"参数param：%@",param);
     NSLog(@"参数name：%@",name);
-    return @[@"100"];
+    return @[@"100",@5,@{@"key1":@"value1",@"key2":@"value2"}];
     
 }
 
