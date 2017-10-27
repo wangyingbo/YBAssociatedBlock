@@ -49,21 +49,21 @@
     /**传值*/
     [NSObject yb_setAssociatedWithClass:@"YBView" withPropertyName:@"tagString" withValue:@"wang yingbo test" withPolicy:OBJC_ASSOCIATION_COPY_NONATOMIC];
 
-+ **使用此类调用任意类的类方法和实例方法，公有或私有方法**
-
-
-		/**利用msgSend函数调用方法*/
-		[NSObject msgSendWithClass:@"ViewController" withSelecter:@"testSendWithParam:withName:" withCompletion:^(id obj) {
-			NSLog(@"返回值：%@",obj);
-		} withParam:@"param1",@"param2",@"param3",@"param4", nil];
-
-
 
 在子类view里接收传值：
 
     /**获取传值*/
         id tagStr = [NSObject yb_getAssociatedValueWithClass:@"YBView" withPropertyName:@"tagString"];
         NSLog(@"tag字符串——————————%@",tagStr);
+
+
++ **使用此类调用任意类的类方法和实例方法，公有或私有方法**
+
+		/**利用msgSend函数调用方法*/
+		[NSObject msgSendWithClass:@"ViewController" withSelecter:@"testSendWithParam:withName:" withCompletion:^(id obj) {
+			NSLog(@"返回值：%@",obj);
+		} withParam:@"param1",@"param2",@"param3",@"param4", nil];
+
 
 ### 给category增加属性的使用方法
 
