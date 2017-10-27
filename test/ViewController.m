@@ -68,12 +68,16 @@ typedef void(^YBTapBlock)(id obj);
     };
 }
 
-- (NSArray *)testSendWithParam:(NSString *)param withName:(NSString *)name
+- (NSArray *)testSendWithParam:(UIButton *)sender withName:(NSString *)name withCompletion:(void(^)(bool isOrNot,id res))completion
 {
-    NSLog(@"参数param：%@",param);
-    NSLog(@"参数name：%@",name);
-    return @[@"100",@5,@{@"key1":@"value1",@"key2":@"value2"}];
+    NSLog(@"第一个参数：%@",sender);
+    NSLog(@"第二个参数：%@",name);
     
+    if (completion) {
+        completion(YES,@"this is a amazing tool!!");
+    }
+    
+    return @[@"100",@5,@{@"key1":@"value1",@"key2":@"value2"}];
 }
 
 

@@ -56,9 +56,10 @@
     return property;
 }
 
-+ (void)msgSendWithClass:(NSString *)claString withSelector:(NSString *)selString withCompletion:(void(^)(id obj))completion withParam:(id)firstParam, ... NS_REQUIRES_NIL_TERMINATION
++ (void)msgSendWithClass:( NSString * _Nonnull )claString withSelector:(NSString * _Nonnull)selString withCompletion:(void(^_Nullable)(id _Nullable obj))completion withParam:(id _Nullable )firstParam, ... NS_REQUIRES_NIL_TERMINATION;
 {
     if (!claString || !selString) {
+        @throw [NSException exceptionWithName:@"param nil" reason:@"类名或者方法名为空" userInfo:nil];
         return;
     }
     
@@ -70,7 +71,9 @@
     id subObjc = [class new];
     
     if (!class) {
-        NSLog(@"当前没有此类");
+        NSLog(@"打印：\n%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:@"类名%@为空，请检查传入的类名",claString]);
+        NSException *excp = [NSException exceptionWithName:@"class nil" reason:[NSString stringWithFormat:@"类名%@为空，请检查传入的类名",claString] userInfo:nil];
+        [excp raise];
         return;
     }
     
@@ -81,6 +84,12 @@
     
     if (!objc) {
         objc = class;
+    }
+    
+    if (![objc respondsToSelector:sel]) {
+        NSLog(@"打印：\n%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:@"方法名%@为空，请检查传入的方法名",NSStringFromSelector(sel)]);
+        @throw [NSException exceptionWithName:@"sel nil" reason:[NSString stringWithFormat:@"方法名%@为空，请检查传入的方法名",NSStringFromSelector(sel)] userInfo:nil];
+        return;
     }
     
     NSMutableArray *mutArr = [NSMutableArray array];
