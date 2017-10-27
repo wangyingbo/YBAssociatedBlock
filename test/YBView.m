@@ -59,7 +59,7 @@
     NSLog(@"tag字符串——————————%@",tagStr);
     
     
-    /**利用msgSend函数调用方法*/
+    /**利用msgSend函数调用任意类的类方法和实例方法，公有或私有方法*/
     [NSObject msgSendWithClass:@"ViewController" withSelector:@"testSendWithParam:withName:withCompletion:" withCompletion:^(id obj) {
         
         NSLog(@"函数返回值：%@",obj);
