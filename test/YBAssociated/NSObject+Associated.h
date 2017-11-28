@@ -13,7 +13,7 @@
 
 
 @interface NSArray (safeGet)
-- (id)safeGetAtIndex:(NSInteger)index;
+- (id _Nullable )safeGetAtIndex:(NSInteger)index;
 @end
 
 @interface NSObject (Associated)

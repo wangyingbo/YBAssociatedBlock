@@ -10,6 +10,7 @@
 #import "YBView.h"
 #import "YBAssociatedHeader.h"
 #import "YBView+Category.h"
+#import "YBViewController.h"
 
 
 typedef void(^YBTapBlock)(id obj);
@@ -86,6 +87,9 @@ typedef void(^YBTapBlock)(id obj);
     YB_OBJC_SET_ASSOCIATED_OBJECT(NSClassFromString(@"YBView"), @"YBView_key1", @"改变传值123", OBJC_ASSOCIATION_COPY_NONATOMIC);
     id changeValue = YB_OBJC_GET_ASSOCIATED_OBJECT(NSClassFromString(@"YBView"), @"YBView_key1");
     NSLog(@"改变传值————————%@",changeValue);
+    
+    YBViewController *ybvc = [[YBViewController alloc]init];
+    [self.navigationController pushViewController:ybvc animated:YES];
 }
 
 @end

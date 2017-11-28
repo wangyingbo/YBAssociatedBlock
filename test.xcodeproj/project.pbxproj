@@ -18,6 +18,7 @@
 		03AF745C1F53DB0B00F89D7F /* YBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF745B1F53DB0B00F89D7F /* YBView.m */; };
 		03AF74651F53E1E500F89D7F /* YBView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF74641F53E1E500F89D7F /* YBView+Category.m */; };
 		03AF746E1F541E8200F89D7F /* NSObject+Associated.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF746C1F541E8200F89D7F /* NSObject+Associated.m */; };
+		03E895781FCBB4F400B66162 /* YBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E895771FCBB4F400B66162 /* YBViewController.m */; };
 		204F3019D9F6D351C4EDE7CE /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA750087C0196F9059949FAD /* libPods-test.a */; };
 		66AF9E7E442FD6AEA582866D /* libPods-testTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0039D9938331D4750BA2DD83 /* libPods-testTests.a */; };
 		BE3F00E65FAAB79D8E4B50DB /* libPods-testUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB2ADFA5CD075D204A5B1D2 /* libPods-testUITests.a */; };
@@ -65,6 +66,8 @@
 		03AF746B1F541E8200F89D7F /* NSObject+Associated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Associated.h"; sourceTree = "<group>"; };
 		03AF746C1F541E8200F89D7F /* NSObject+Associated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Associated.m"; sourceTree = "<group>"; };
 		03AF746F1F5429D000F89D7F /* YBAssociatedHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBAssociatedHeader.h; sourceTree = "<group>"; };
+		03E895761FCBB4F400B66162 /* YBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBViewController.h; sourceTree = "<group>"; };
+		03E895771FCBB4F400B66162 /* YBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBViewController.m; sourceTree = "<group>"; };
 		0B21B4E7122A8A26C48B9ED7 /* Pods-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testTests/Pods-testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1BB2ADFA5CD075D204A5B1D2 /* libPods-testUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		212E06F9415B55045D2BE5AD /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				03AF742A1F53DA8C00F89D7F /* AppDelegate.m */,
 				03AF742C1F53DA8C00F89D7F /* ViewController.h */,
 				03AF742D1F53DA8C00F89D7F /* ViewController.m */,
+				03E895761FCBB4F400B66162 /* YBViewController.h */,
+				03E895771FCBB4F400B66162 /* YBViewController.m */,
 				03AF745A1F53DB0B00F89D7F /* YBView.h */,
 				03AF745B1F53DB0B00F89D7F /* YBView.m */,
 				03AF74631F53E1E500F89D7F /* YBView+Category.h */,
@@ -490,6 +495,7 @@
 			files = (
 				03AF742E1F53DA8C00F89D7F /* ViewController.m in Sources */,
 				03AF746E1F541E8200F89D7F /* NSObject+Associated.m in Sources */,
+				03E895781FCBB4F400B66162 /* YBViewController.m in Sources */,
 				03AF745C1F53DB0B00F89D7F /* YBView.m in Sources */,
 				03AF742B1F53DA8C00F89D7F /* AppDelegate.m in Sources */,
 				03AF74281F53DA8C00F89D7F /* main.m in Sources */,
