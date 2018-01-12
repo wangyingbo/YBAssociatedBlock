@@ -21,6 +21,29 @@ typedef OBJC_ENUM(uintptr_t, yb_objc_AssociationPolicy) {
     YB_OBJC_ASSOCIATION_COPY = OBJC_ASSOCIATION_COPY
 };
 
+//...和 __VA_ARGS__ 看下NSLog和printf，他们的传入参数有多个，用...表示不确定参数个数， 看看NSLog的定义： NSLog(NSString *format, ...)。在宏里也可以用...来表示多个参数，而__VA_ARGS__就对应多个参数的部分。
+#define YBLog(...) NSLog(__VA_ARGS__)
+
+
+
+
+#ifndef weakify
+#define weakify( x ) \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x; \
+_Pragma("clang diagnostic pop")
+#endif
+
+#ifndef strongify
+#define strongify( x ) \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Wshadow\"") \
+try{} @finally{} __typeof__(x) x = __weak_##x##__; \
+_Pragma("clang diagnostic pop")
+#endif
+
+
 
 
 #define SafePerformSelector(Stuff) \

@@ -28,7 +28,7 @@
  @param policy policy description
  @param completion 回调方法
  */
-+ (void)setAssociatedWithClass:(NSString *)cla key:(NSString *)key policy:(objc_AssociationPolicy)policy completion:(void(^)(id obj))completion;
++ (void)setAssociatedWithClass:(NSString *_Nonnull)cla key:(NSString *_Nonnull)key policy:(objc_AssociationPolicy)policy completion:(void(^_Nullable)(id _Nullable obj))completion;
 
 /**
  通过runtime动态关联get对象(block)-block回调传参
@@ -37,7 +37,7 @@
  @param key 值的key
  @param param 可以传出去的参数
  */
-+ (void)getAssociatedWithClass:(NSString *)cla key:(NSString *)key param:(id)param;
++ (void)getAssociatedWithClass:(NSString *_Nonnull)cla key:(NSString *_Nonnull)key param:(id _Nullable )param;
 
 
 /**
@@ -48,7 +48,7 @@
  @param value 属性值
  @param policy policy description
  */
-+ (void)yb_setAssociatedWithClass:(NSString *)cla withPropertyName:(NSString *)propertyName withValue:(id)value withPolicy:(objc_AssociationPolicy)policy;
++ (void)yb_setAssociatedWithClass:(NSString *_Nonnull)cla withPropertyName:(NSString *_Nonnull)propertyName withValue:(id _Nullable )value withPolicy:(objc_AssociationPolicy)policy;
 
 /**
  获得属性-传值
@@ -57,7 +57,7 @@
  @param propertyName 属性名
  @return 属性的值
  */
-+ (id)yb_getAssociatedValueWithClass:(NSString *)cla withPropertyName:(NSString *)propertyName;
++ (id _Nullable )yb_getAssociatedValueWithClass:(NSString *_Nonnull)cla withPropertyName:(NSString *_Nonnull)propertyName;
 
 
 /**
