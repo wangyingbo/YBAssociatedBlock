@@ -28,18 +28,18 @@ typedef OBJC_ENUM(uintptr_t, yb_objc_AssociationPolicy) {
 
 
 #ifndef weakify
-#define weakify( x ) \
+#define weakify( self ) \
 _Pragma("clang diagnostic push") \
 _Pragma("clang diagnostic ignored \"-Wshadow\"") \
-autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x; \
+autoreleasepool{} __weak __typeof__(self) __weak_##self##__ = self; \
 _Pragma("clang diagnostic pop")
 #endif
 
 #ifndef strongify
-#define strongify( x ) \
+#define strongify( self ) \
 _Pragma("clang diagnostic push") \
 _Pragma("clang diagnostic ignored \"-Wshadow\"") \
-try{} @finally{} __typeof__(x) x = __weak_##x##__; \
+try{} @finally{} __typeof__(self) self = __weak_##self##__; \
 _Pragma("clang diagnostic pop")
 #endif
 

@@ -7,8 +7,16 @@
 //
 
 #import "YBTestViewController.h"
+#import "YBView.h"
+#import "YBView+Category.h"
+#import "YBAssociatedHeader.h"
+
+
+typedef void(^YBTapBlock)(id obj);
 
 @interface YBTestViewController ()
+@property (nonatomic, weak) YBView *myView;
+@property (nonatomic, copy) YBTapBlock tapBlock;
 
 @end
 
@@ -16,22 +24,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    YBView *myView = [[YBView alloc]init];
+    myView.backgroundColor = [UIColor brownColor];
+    myView.string = @"";
+    [self.view addSubview:myView];
+    self.myView = myView;
+    
+    @weakify(self);
+    self.tapBlock = ^(id obj) {
+        @strongify(self);
+        self.myView.string = @"hello,OC";
+    };
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    
+    self.tapBlock(nil);
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    self.myView.frame = CGRectMake(100, 100, 150, 80);
 }
-*/
+
+- (void)dealloc
+{
+    YBLog(@"%@被销毁了",[self class]);
+}
 
 @end

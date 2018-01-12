@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface YBView : UIView
-
++ (void)print:(NSString *)firstArg, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end

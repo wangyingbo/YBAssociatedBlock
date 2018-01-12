@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0327CEC4200899D40026111E /* YBTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0327CEC3200899D30026111E /* YBTestViewController.m */; };
 		03AF74281F53DA8C00F89D7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF74271F53DA8C00F89D7F /* main.m */; };
 		03AF742B1F53DA8C00F89D7F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF742A1F53DA8C00F89D7F /* AppDelegate.m */; };
 		03AF742E1F53DA8C00F89D7F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AF742D1F53DA8C00F89D7F /* ViewController.m */; };
@@ -42,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		0039D9938331D4750BA2DD83 /* libPods-testTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0327CEC2200899D30026111E /* YBTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBTestViewController.h; sourceTree = "<group>"; };
+		0327CEC3200899D30026111E /* YBTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBTestViewController.m; sourceTree = "<group>"; };
 		03AF74231F53DA8C00F89D7F /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AF74271F53DA8C00F89D7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		03AF74291F53DA8C00F89D7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				03AF742A1F53DA8C00F89D7F /* AppDelegate.m */,
 				03AF742C1F53DA8C00F89D7F /* ViewController.h */,
 				03AF742D1F53DA8C00F89D7F /* ViewController.m */,
+				0327CEC2200899D30026111E /* YBTestViewController.h */,
+				0327CEC3200899D30026111E /* YBTestViewController.m */,
 				03AF745A1F53DB0B00F89D7F /* YBView.h */,
 				03AF745B1F53DB0B00F89D7F /* YBView.m */,
 				03AF74631F53E1E500F89D7F /* YBView+Category.h */,
@@ -489,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03AF742E1F53DA8C00F89D7F /* ViewController.m in Sources */,
+				0327CEC4200899D40026111E /* YBTestViewController.m in Sources */,
 				03AF746E1F541E8200F89D7F /* NSObject+Associated.m in Sources */,
 				03AF745C1F53DB0B00F89D7F /* YBView.m in Sources */,
 				03AF742B1F53DA8C00F89D7F /* AppDelegate.m in Sources */,

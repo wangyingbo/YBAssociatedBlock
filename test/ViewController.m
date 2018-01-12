@@ -11,6 +11,7 @@
 #import "YBAssociatedHeader.h"
 #import "YBView+Category.h"
 
+#import "YBTestViewController.h"
 
 typedef void(^YBTapBlock)(id obj);
 
@@ -63,10 +64,10 @@ typedef void(^YBTapBlock)(id obj);
     [super viewDidAppear:YES];
     
     @weakify(self);
-    //被赋值后可以在任意地方响应
     self.tapBlock = ^(id obj) {
         @strongify(self);
-        NSLog(@"回调————————%@",obj);
+        YBLog(@"回调————————%@",obj);
+        self.myView.string = @"hello,OC";
     };
 }
 
@@ -89,6 +90,8 @@ typedef void(^YBTapBlock)(id obj);
     id changeValue = YB_OBJC_GET_ASSOCIATED_OBJECT(NSClassFromString(@"YBView"), @"YBView_key1");
     NSLog(@"改变传值————————%@",changeValue);
     
+    YBTestViewController *testVC = [[YBTestViewController alloc]init];
+    [self.navigationController pushViewController:testVC animated:YES];
 }
 
 @end
