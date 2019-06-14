@@ -70,7 +70,6 @@
  */
 + (void)msgSendWithClass:( NSString * _Nonnull )claString withSelector:(NSString * _Nonnull)selString withCompletion:(void(^_Nullable)(id _Nullable obj))completion withParam:(id _Nullable )firstParam, ... NS_REQUIRES_NIL_TERMINATION;
 
-
 - (id)yb_performSelector:(SEL)aSelector withObjects:(NSArray *)objects;
 
 /**

@@ -69,8 +69,6 @@
         NSLog(@"block参数的返回值：%@!%@",isOrNot?@"yes":@"no",res);
         
     } , nil];
-    
-    
 }
 
 

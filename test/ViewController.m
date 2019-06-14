@@ -33,7 +33,6 @@ typedef void(^YBTapBlock)(id obj);
     [self.view addSubview:myView];
     self.myView = myView;
     
-    
     /**封装成一句代码回调*/
     [NSObject setAssociatedWithClass:@"YBView" key:@"YBView_key" policy:OBJC_ASSOCIATION_COPY_NONATOMIC completion:^(id obj) {
         if (self.tapBlock) {//回调以后再传出回调
@@ -46,6 +45,9 @@ typedef void(^YBTapBlock)(id obj);
     
     /**传值*/
     //[NSObject yb_setAssociatedWithClass:@"YBView" withPropertyName:@"tagString" withValue:@"wang yingbo test" withPolicy:OBJC_ASSOCIATION_COPY_NONATOMIC];
+    
+    /**传值*/
+    [NSObject yb_setAssociatedWithClass:@"YBView" withPropertyName:@"tagString" withValue:@"wang yingbo test" withPolicy:OBJC_ASSOCIATION_COPY_NONATOMIC];
     
 }
 
